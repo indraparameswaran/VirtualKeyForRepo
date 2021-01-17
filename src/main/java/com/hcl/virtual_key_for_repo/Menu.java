@@ -15,13 +15,14 @@ public class Menu {
 	public void welcomeMenu() throws NoSuchFileException, IOException {
 
 		System.out.println("Do you want to Continue or Exit ?\n");
+		System.out.println("1.Continue\n");
+		System.out.println("2.Exit\n");
 		welcomeOptions();
 
 	}
 
 	public void welcomeOptions() throws NoSuchFileException, IOException {
-		System.out.println("1.Continue\n");
-		System.out.println("2.Exit\n");
+		System.out.println("Please choose 1 or 2: ");
 		userOptions = scanner.nextLine();
 		switch (userOptions) {
 		case "1":
@@ -64,7 +65,6 @@ public class Menu {
 			break;
 
 		case "3":
-
 			closeApp();
 			break;
 
@@ -88,19 +88,19 @@ public class Menu {
 	public void fileOperationsOptions() throws NoSuchFileException, IOException {
 		System.out.println("Please choose 1, 2, 3, or 4: ");
 		userOptions = scanner.nextLine();
-		
+
 		switch (userOptions) {
 		case "1":
-			System.out.println("Add file");
+			System.out.println("Add file (Ignores case sensitivity of the entered name)");
 			addOperation();
-			
+
 			break;
 
 		case "2":
 			System.out.println("Delete file");
 			deleteOperation();
 			break;
-			
+
 		case "3":
 
 			System.out.println("search file");
@@ -108,12 +108,12 @@ public class Menu {
 			break;
 
 		case "4":
-		
+
 			mainMenu();
 			break;
 		}
 
-		 fileOperationsMenu();
+		fileOperationsMenu();
 	}
 
 	public void addOperation() throws FileAlreadyExistsException, IOException {
@@ -124,23 +124,21 @@ public class Menu {
 		FileOperations.addFiles(userOptions);
 
 	}
-	
+
 	public void deleteOperation() throws NoSuchFileException, IOException {
 		System.out.println("Available files to delete are : ");
 		FileOperations.retieveFiles(Constants.fileRecordsPath);
 		System.out.println("Enter the file to be deleted from the list: \n");
 		userOptions = scanner.nextLine();
 		FileOperations.deleteFile(userOptions);
-		
+
 	}
-	
+
 	public void searchOperation() {
 		System.out.println("Enter a file name to be searched : \n");
 		userOptions = scanner.nextLine();
 		FileOperations.searchFile(userOptions);
 	}
-	
-
 
 	public void closeApp() {
 		System.out.println("Thanks for using LockedMe.com. Closing application");

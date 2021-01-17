@@ -1,10 +1,9 @@
 package com.hcl.util;
 
 public class Constants {
-	public static final String fileRecordsPath = "src\\main\\resources\\";
+	// folder storing application files
+	public static final String fileRecordsPath = "appfiles\\";
+	// folder storing files to add
+	public static final String addFilesRecordsPath = "addfiles\\";
 	
-	public static final String addFilesRecordsPath = "src\\main\\addfiles\\";
-	
-	
-
 }
